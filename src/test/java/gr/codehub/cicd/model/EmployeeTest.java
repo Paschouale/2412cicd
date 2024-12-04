@@ -27,4 +27,10 @@ public class EmployeeTest {
     void shouldReturnCorrectSalary() {
         assertEquals(60000, sampleEmployee.getSalary(), "Employee salary should match");
     }
+
+    @Test
+    void shouldApply45PercentTaxOnSalariesAtLeast50000(){
+        double expectedTax = 60000 * 0.45;
+        assertEquals(expectedTax, sampleEmployee.getTaxAmount(), "Tax for salary >= 50000 should be 45%");
+    }
 }
